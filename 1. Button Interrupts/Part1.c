@@ -81,6 +81,6 @@ __interrupt void Port_2(void)
 {
     P2IFG &= ~BIT3;                         // Clear P1.3 IFG
     LED_Color ^= BIT0;                 // Toggle LED_Color
-    P2IES = ~P2IES;                          // Toggle rising and falling edge.
+    P2IES = ~P2IES;                    // Toggle rising and falling edge.
 }
 
