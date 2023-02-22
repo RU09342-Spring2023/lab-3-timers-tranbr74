@@ -4,14 +4,14 @@ This code is about blinking a Red LED based on how long a button is pushed down 
 
 **WHAT WAS USED?**
 
-P1.0 (a.k.a red LED) was set as an output toggled by the Timer B1 interrupt.
-P6.6 (a.k.a green LED) was set as an output toggled by the P2.3 interrupt.
-P2.3 (a.k.a Blinking Button) was set as input with a pullup resistor, interrupt enabled, and rising/falling changes.
-P4.1 (a.k.a reset button) was set as an input with a pullup resistor, interrupt enabled, and falling edge.
-Timer B0 was set to TB0CCRO, ACLK, continuous, and divided by a clock divider of 8. This is used to set the timer for P2.3. 
-Timer B1 was set to TB1CCRO, ACLK, continuous, and divided by a clock divider of 8. This is used to set the timer for the red LED.
+1.  P1.0 (a.k.a red LED) was set as an output toggled by the Timer B1 interrupt.
+2.  P6.6 (a.k.a green LED) was set as an output toggled by the P2.3 interrupt.
+3.  P2.3 (a.k.a Blinking Button) was set as input with a pullup resistor, interrupt enabled, and rising/falling changes.
+4.  P4.1 (a.k.a reset button) was set as an input with a pullup resistor, interrupt enabled, and falling edge.
+5.  Timer B0 was set to TB0CCRO, ACLK, continuous, and divided by a clock divider of 8. This is used to set the timer for       P2.3. 
+6.  Timer B1 was set to TB1CCRO, ACLK, continuous, and divided by a clock divider of 8. This is used to set the timer for the   red LED.
 
-**Why do we need a clock divider and ACLK (Design consideration): **
+**Why do we need a clock divider and ACLK (Design consideration):** 
 A clock divider and an ACLK is needed to slow the clock down as using these will allow the user to hold down a button for a very long time. Using an ACLK will capture 2 seconds of time as it runs at 32,768 Hz. With the addition of Clock Dividers (ID), clocks can be slowed even further. A clock divider can only divide by factors of 2, 4, 8, 16. If needed, more can be used.
 
 **How do you use the code?**
