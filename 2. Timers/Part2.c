@@ -13,7 +13,7 @@
 void gpioInit();
 void timerInit();
 
-unsigned int t = 1000;
+unsigned int t = 1000; // Timer starts at it's fastest speed
 
 
 void main(){
@@ -71,9 +71,11 @@ __interrupt void Port_2(void)
     // For each button press, update speed.
         if (t == 1000) {
             t = 10000;
-        } else if (t == 10000) {
+        }
+        else if (t == 10000) {
             t = 50000;
-        } else {
+        }
+        else {
             t = 1000;
         }
 }
